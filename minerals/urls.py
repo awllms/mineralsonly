@@ -5,5 +5,5 @@ from . import views
 app_name = 'minerals'
 
 urlpatterns = [
-    path('', views.home),
+    path('', views.mineral_list),
 ]
