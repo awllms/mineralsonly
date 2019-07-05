@@ -7,4 +7,5 @@ def mineral_list(request):
 
 
 def mineral_detail(request):
-    pass
+    """Renders detailed minerals page."""
+    return render(request, 'minerals/mineral_detail.html')
