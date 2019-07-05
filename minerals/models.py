@@ -1,4 +1,5 @@
 from django.db import models
+from django.db import IntegrityError
 
 
 # Create your models here.
@@ -23,3 +24,19 @@ class Mineral(models.Model):
     refractive_index = models.CharField(max_length=255)
     crystal_habit = models.TextField(default='')
     specific_gravity = models.CharField(max_length=255)
+    group = models.CharField(max_length=255, default='')
+
+    def __str__(self):
+        return self.name
+
+
+def load_json_data():
+    """Loads json data into database."""
+    import json
+    with open('assets/minerals.json') as mineralfile:
+        mineral_list_data = json.load(mineralfile)
+    for mineral in mineral_list_data:
+        try:
+            Mineral.objects.create(**mineral)
+        except IntegrityError:
+            pass
