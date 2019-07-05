@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,9 +23,10 @@
         <h1 class="logo__name text-centered">Minerals Only</h1>
       </a>
       <p class="logo__text text-centered">They're not rocks!</p>
+    
+      {% block content %}
+      {% endblock %}
     </div>
-    {% block content %}
-    {% endblock %}
   </div>
   <div class="minerals__random">
     <a class="minerals__anchor" href="#">Show random mineral</a>
