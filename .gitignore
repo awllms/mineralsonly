@@ -188,3 +188,5 @@ dmypy.json
 # Pyre type checker
 
 .vscode
+.assets/.DS_Store
+.DS_Store
