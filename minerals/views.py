@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .models import Mineral
 
@@ -11,5 +11,5 @@ def mineral_list(request):
 
 def mineral_detail(request, pk):
     """Renders detailed minerals page."""
-    mineral = Mineral.objects.filter(pk=pk)
+    mineral = get_object_or_404(Mineral, pk=pk)
     return render(request, 'minerals/mineral_detail.html', {'mineral': mineral})
