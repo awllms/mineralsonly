@@ -6,5 +6,5 @@ app_name = 'minerals'
 
 urlpatterns = [
     path('', views.mineral_list, name='home'),
-    path('detail/', views.mineral_detail, name='detail'),
+    path('detail/<pk>', views.mineral_detail, name='detail'),
 ]

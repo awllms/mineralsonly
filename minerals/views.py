@@ -9,6 +9,7 @@ def mineral_list(request):
     return render(request, 'minerals/mineral_list.html', {'minerals': minerals})
 
 
-def mineral_detail(request):
+def mineral_detail(request, pk):
     """Renders detailed minerals page."""
-    return render(request, 'minerals/mineral_detail.html')
+    mineral = Mineral.objects.filter(pk=pk)
+    return render(request, 'minerals/mineral_detail.html', {'mineral': mineral})
