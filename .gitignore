@@ -190,3 +190,4 @@ dmypy.json
 .vscode
 .assets/.DS_Store
 .DS_Store
+htmlcov
