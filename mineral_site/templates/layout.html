@@ -57,7 +57,9 @@
                 {% endfor %}
                 <!-- <li><a href="#">B</a></li> -->
             </ul>
-            
+            {% block group %}
+                {% group_nav_list %}
+            {% endblock group %}
 
             {% block content %}
             {% endblock %}

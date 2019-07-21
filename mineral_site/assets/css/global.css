@@ -217,11 +217,13 @@ table, p, ul { margin-bottom: 2.5rem; }
   column-gap: 26px;
 }
 
-.minerals__container.alphabet .active {
+.minerals__container.alphabet .active,
+.grid-25.sidebar ul li.active {
   font-weight: bolder;
 }
 
-.minerals__container.alphabet .active a {
+.minerals__container.alphabet .active a,
+.grid-25.sidebar .active a {
   color: #466968;
 }
 
@@ -252,7 +254,16 @@ input[type=search] {
 }
 
 .grid-25.sidebar {
+  background-color: #fff;
+  border-radius: 6px;
   text-align: center;
+  padding: 28px 0;
+  margin-right: 10px;
+}
+
+.grid-25.sidebar ul li {
+  list-style: none;
+  font-size: 1.4rem;
 }
 
 @media (min-width: 440px) and (max-width: 719px) { 

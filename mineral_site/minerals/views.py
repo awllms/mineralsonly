@@ -27,3 +27,10 @@ def search(request):
     search_term = request.GET.get('q')
     minerals = Mineral.objects.filter(name__icontains=search_term)
     return render(request, 'minerals/mineral_list.html', {'minerals': minerals})
+
+
+def group_search(request, group):
+    """Returns list of minerals filtered by group."""
+    group = group.replace('-', ' ')
+    minerals = Mineral.objects.filter(group__icontains=group)
+    return render(request, 'minerals/mineral_list.html', {'minerals': minerals})

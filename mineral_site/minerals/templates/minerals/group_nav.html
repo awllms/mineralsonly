@@ -1,0 +1,14 @@
+{% load strip_white_space from mineral_extras %}
+<div class="grid-25 sidebar">
+    <h4>Filter by Group</h4>
+    <ul>
+        {% for mineral in minerals %}
+        {% url 'minerals:group_search' group=mineral.lower|strip_white_space as group_url %}
+            <li {% if request.get_full_path == group_url %}class="active"{% endif %}>
+                <a class="group-anchor" href="{% url 'minerals:group_search' group=mineral.lower|strip_white_space %}">
+                    {{ mineral }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
