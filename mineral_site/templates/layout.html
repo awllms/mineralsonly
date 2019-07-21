@@ -28,6 +28,14 @@
             </a>
             <p class="logo__text text-centered">They're not rocks!</p>
 
+            <section class="search-section">
+                <form action="{% url 'minerals:search' %}" method="GET">
+                    <input type="search" name="q">
+                    <button type="button" class="search-button">Search</button>
+                    </ul>
+                </form>
+            </section>
+
             <ul class="minerals__container alphabet">
                 {% show_letters as letters %}
                 {% for letter in letters %}
@@ -49,6 +57,7 @@
                 {% endfor %}
                 <!-- <li><a href="#">B</a></li> -->
             </ul>
+            
 
             {% block content %}
             {% endblock %}

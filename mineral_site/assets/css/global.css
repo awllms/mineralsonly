@@ -179,7 +179,7 @@ table, p, ul { margin-bottom: 2.5rem; }
 
 .logo { display: block; fill: #384033; position: relative; margin: 0 auto; width: 72px; }
 .logo__name { margin-bottom: 0; }
-.logo__text { margin-bottom: 50px; font-size: 13px; }
+.logo__text { margin-bottom: 10px; font-size: 13px; }
 .logo--middle { fill: #406b44; }
 
 .minerals__container { background-color: #fff; border-radius: 6px; list-style: none; padding: 30px 30px 20px 30px; -webkit-column-gap: 30px; -moz-column-gap: 30px; column-gap: 30px; }
@@ -225,6 +225,36 @@ table, p, ul { margin-bottom: 2.5rem; }
   color: #466968;
 }
 
+section.search-section {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.search-section ul li {
+  float: left;
+}
+
+input[type=search] {
+  background-color: white;
+  border: none;
+  padding: 8px 0;
+  border-radius: 4px;
+}
+
+.search-button {
+  background-color: #537d7b;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+.grid-25.sidebar {
+  text-align: center;
+}
+
 @media (min-width: 440px) and (max-width: 719px) { 
   .minerals__container.alphabet { 
     display: none;
@@ -239,4 +269,12 @@ table, p, ul { margin-bottom: 2.5rem; }
     -moz-column-gap: 26px;
     column-gap: 26px;
    }
+}
+
+/* Float Clearfix ----------------------- */
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
 }

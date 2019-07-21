@@ -20,3 +20,10 @@ def letter_search(request, letter):
     """Display minerals by letter."""
     minerals = Mineral.objects.filter(name__istartswith=letter)
     return render(request, 'minerals/mineral_list.html', {'minerals': minerals})
+
+
+def search(request):
+    """Filter the minerals whose name matches the search term."""
+    search_term = request.GET.get('q')
+    minerals = Mineral.objects.filter(name__icontains=search_term)
+    return render(request, 'minerals/mineral_list.html', {'minerals': minerals})
