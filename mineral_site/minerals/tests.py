@@ -42,7 +42,7 @@ class MineralViewsTests(TestCase):
     def setUp(self):
         """Set up method to use for model test."""
         self.mineral = Mineral.objects.create(
-            name='Test Mineral',
+            name='A Test Mineral',
             image_filename='testfilename.jpg',
             image_caption='test caption',
             category='test category',
@@ -64,7 +64,7 @@ class MineralViewsTests(TestCase):
             group='test group')
 
         self.mineral2 = Mineral.objects.create(
-            name='Test Mineral2',
+            name='A Test Mineral2',
             image_filename='testfilename2.jpg',
             image_caption='test caption2',
             category='test category2',
