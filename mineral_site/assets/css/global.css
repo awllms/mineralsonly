@@ -260,6 +260,7 @@ input[type=search] {
   text-align: center;
   padding: 28px 0;
   margin-right: 10px;
+  margin-bottom: 20px;
 }
 
 .grid-25.sidebar ul li {
