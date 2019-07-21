@@ -209,3 +209,34 @@ table, p, ul { margin-bottom: 2.5rem; }
   display: inline-block;
   width: 100%;
 }
+
+.mineral__container.alphabet {
+  /* padding: 30px 30px 20px 30px;  */
+  -webkit-column-gap: 26px; 
+  -moz-column-gap: 26px;
+  column-gap: 26px;
+}
+
+.minerals__container.alphabet .active {
+  font-weight: bolder;
+}
+
+.minerals__container.alphabet .active a {
+  color: #466968;
+}
+
+@media (min-width: 440px) and (max-width: 719px) { 
+  .minerals__container.alphabet { 
+    display: none;
+  } 
+}
+@media (min-width: 720px) { 
+  .minerals__container.alphabet {
+    -webkit-column-count: 26; 
+    -moz-column-count: 26; 
+    column-count: 26;
+    -webkit-column-gap: 26px; 
+    -moz-column-gap: 26px;
+    column-gap: 26px;
+   }
+}
