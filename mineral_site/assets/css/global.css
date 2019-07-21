@@ -215,6 +215,7 @@ table, p, ul { margin-bottom: 2.5rem; }
   -webkit-column-gap: 26px; 
   -moz-column-gap: 26px;
   column-gap: 26px;
+  padding: 25px 30px 15px 30px;
 }
 
 .minerals__container.alphabet .active,
@@ -230,7 +231,7 @@ table, p, ul { margin-bottom: 2.5rem; }
 section.search-section {
   display: block;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .search-section ul li {
@@ -279,6 +280,7 @@ input[type=search] {
     -webkit-column-gap: 26px; 
     -moz-column-gap: 26px;
     column-gap: 26px;
+    padding: 20px 30px 10px 30px;
    }
 }
 
