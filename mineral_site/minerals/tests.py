@@ -83,7 +83,7 @@ class MineralViewsTests(TestCase):
             refractive_index='test refractive index2',
             crystal_habit='test crystal habit2',
             specific_gravity='test spacific gravity2',
-            group='test group2')
+            group='test group')
 
     def test_mineral_list_view(self):
         """Testing Mineral home view."""
@@ -101,4 +101,37 @@ class MineralViewsTests(TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(self.mineral, resp.context['mineral'])
         self.assertTemplateUsed(resp, 'minerals/mineral_detail.html')
+        self.assertContains(resp, self.mineral.name)
+
+
+    def test_letter_search_view(self):
+        """Testing Mineral letter search view."""
+        resp = self.client.get(reverse('minerals:letter_search',
+                                       kwargs={'letter': self.mineral.name[0]}
+                                       ))
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn(self.mineral, resp.context['minerals'])
+        self.assertIn(self.mineral2, resp.context['minerals'])
+        self.assertTemplateUsed(resp, 'minerals/mineral_list.html')
+        self.assertContains(resp, self.mineral.name)
+
+    
+    def test_search_view(self):
+        """Testing Mineral search view."""
+        resp = self.client.get('/search/?q=A Test Mineral')
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn(self.mineral, resp.context['minerals'])
+        self.assertTemplateUsed(resp, 'minerals/mineral_list.html')
+        self.assertContains(resp, self.mineral.name)
+
+
+    def test_group_search_view(self):
+        """Testing Mineral group search view."""
+        resp = self.client.get(reverse('minerals:group_search',
+                                       kwargs={'group': self.mineral.group}
+                                       ))
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn(self.mineral, resp.context['minerals'])
+        self.assertIn(self.mineral2, resp.context['minerals'])
+        self.assertTemplateUsed(resp, 'minerals/mineral_list.html')
         self.assertContains(resp, self.mineral.name)
